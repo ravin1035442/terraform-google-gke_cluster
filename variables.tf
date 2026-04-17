@@ -418,9 +418,9 @@ variable "nginx_controller" {
   type             = object({
     enabled        = bool
     ip_name        = string
-    replica_count  = optional(number)
-    memory_request = optional(string)
-    memory_limit   = optional(string)
+    replica_count  = optional(number, 2)
+    memory_request = optional(string, "256Mi")
+    memory_limit   = optional(string, "512Mi")
   })
   default = {
     enabled = false
