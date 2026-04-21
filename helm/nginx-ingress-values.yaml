@@ -370,7 +370,7 @@ controller:
   # -- Annotations to be added to controller pods
   ##
   podAnnotations: {}
-  replicaCount: 1
+  replicaCount: 2
   # -- Minimum available pods set in PodDisruptionBudget.
   # Define either 'minAvailable' or 'maxUnavailable', never both.
   minAvailable: 1
@@ -382,12 +382,12 @@ controller:
   ## Ideally, there should be no limits.
   ## https://engineering.indeedblog.com/blog/2019/12/cpu-throttling-regression-fix/
   resources:
-    ##  limits:
+      limits:
     ##    cpu: 100m
-    ##    memory: 90Mi
+        memory: 512Mi
     requests:
       cpu: 100m
-      memory: 90Mi
+      memory: 256Mi
   # Mutually exclusive with keda autoscaling
   autoscaling:
     enabled: false
